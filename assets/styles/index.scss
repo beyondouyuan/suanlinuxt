@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/*
+* @Author: beyondouyuan
+* @Date:   2018-04-26 16:17:40
+* @Last Modified by:   beyondouyuan
+* @Last Modified time: 2018-08-18 18:12:47
+*/
+@import "./variable.scss";
+@import "./mixin.scss";
+@import './reset.scss';
+@import './menu.scss';
+@import './home.scss';
+@import './footer.scss';
+@import './style.scss';
+
+.layout-container {
+    min-height: 100vh;
+    width: $per100;
+}
+
+.content-container {
+    margin-top: 0 !important;
+    min-height: calc(100vh - 370px);
+    height: $per100;
+    width: $per100;
+    background-color: #FFFFFF;
+}
+.header-container {
+  width: $per100;
+  // height: 120px;
+  display: flex;
+  align-items: flex-end;
+  background-color: #000000;
+}
+
+.pagination-container {
+  width: $per100;
+  text-align: right;
+  margin: px2percent(20) 0;
+  overflow-x: scroll;
+}
+.table-box {
+  overflow-x: scroll;
+}
+@media screen and (max-width:767px) {
+  .header-container {
+    height: auto;
+  }
+}
+.cursor {
+  cursor: pointer;
+}
+.link-a {
+  @extend .cursor;
+  color: $baseColor;
+}
+
+.box-shadow {
+  box-shadow: 0px 1px 4px 0px rgba(11, 11, 11, .2);
+}
+
+/*水波纹样式*/
+.waves-ripple {
+    position: absolute;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+    background-clip: padding-box;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+}
+
+.waves-ripple.z-active {
+    opacity: 0;
+    -webkit-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2);
+    -webkit-transition: opacity 1.2s ease-out, -webkit-transform 0.6s ease-out;
+    transition: opacity 1.2s ease-out, -webkit-transform 0.6s ease-out;
+    transition: opacity 1.2s ease-out, transform 0.6s ease-out;
+    transition: opacity 1.2s ease-out, transform 0.6s ease-out, -webkit-transform 0.6s ease-out;
+}
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
